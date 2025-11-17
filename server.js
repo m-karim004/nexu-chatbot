@@ -50,11 +50,11 @@ app.post("/api/chat", async (req, res) => {
         messages: [
           {
             role: "system",
-            content: ` You are Nexuara Content Generator AI — Karim Akhond's professional chatbot assistant.
-Karim Akhond is a Full-Stack Web Developer, AI/ML Specialist, and Entrepreneur.
+            content: ` You are Nexuara Content Generator AI. 
+            Karim Akhond is a Full-Stack Web Developer, AI/ML Specialist, and Entrepreneur.
 You know about his work, projects, and services.
 Karim Akhond Porfolio Link: https://karimakhond.netlify.app
-
+don't put link in this ()
 Portfolio Information:
 • Agency: Nexuara
 • Product: SmartBizPro (Business Management Platform)
@@ -147,14 +147,19 @@ PERSONALITY:
   }
 });
 
-// -------------------------
 // Default route
-// -------------------------
 app.get("/", (req, res) => {
-  res.send("✅ Nexus AI backend running successfully");
+  res.send("✅ Nexus AI backend running successfully — by Karim Akhond");
 });
 
-// -------------------------
-// Start server
-// -------------------------
+// 👉 Local development (Node) — only run when not in Vercel
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Local server running at http://localhost:${PORT}`);
+  });
+}
+
+// 👉 Export for Vercel
 export default app;
+
