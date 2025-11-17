@@ -151,12 +151,10 @@ PERSONALITY:
 // Default route
 // -------------------------
 app.get("/", (req, res) => {
-  res.send("✅ Nexus AI backend running successfully — by Karim Akhond");
+  res.send("✅ Nexus AI backend running successfully");
 });
 
 // -------------------------
 // Start server
 // -------------------------
-app.listen(PORT, () => {
-  console.log(`🚀 SmartChat AI server running at http://localhost:${PORT}`);
-});
+export default app;
