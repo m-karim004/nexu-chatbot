@@ -127,7 +127,7 @@ app.get("/", (req, res) => {
   res.send("✅ Nexus AI backend running successfully — by Karim Akhond");
 });
 if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`🚀 Local server running at http://localhost:${PORT}`);
   });
